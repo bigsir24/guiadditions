@@ -9,12 +9,12 @@
     "Big Sir"
   ],
   "contact": {
-    "homepage": "",
-    "sources": "https://github.com/bigsir24/guiadditions"
+    "homepage": "https://github.com/bigsir24/guiadditions",
+		"issues": "https://github.com/bigsir24/guiadditions/issues"
   },
 
 	"icon": "icon.png",
-  "license": "CC0-1.0",
+  "license": "GPL-3.0",
 
   "environment": "*",
   "entrypoints": {
@@ -29,7 +29,7 @@
 		]
 	},
   "mixins": [
-		"examplemod.mixins.json"
+		"guiadditions.mixins.json"
   ],
 
   "depends": {
