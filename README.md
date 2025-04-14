@@ -4,4 +4,4 @@
 
 
 # Credits
-- Hotbar selector textures by **Musicano**
+- Hotbar selector textures and idea by **Musicano**
