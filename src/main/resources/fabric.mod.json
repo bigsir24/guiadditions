@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "guiadditions",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Gui Additions",
+  "description": "Adds suggested GUI features with resource pack support!",
   "authors": [
-    "Turnip Labs"
+    "Big Sir"
   ],
   "contact": {
     "homepage": "",
-    "sources": ""
+    "sources": "https://github.com/bigsir24/guiadditions"
   },
 
 	"icon": "icon.png",
@@ -19,25 +19,23 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+			"bigsir.guiadditions.GuiAdditions"
     ],
-		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+		"beforeClientStart": [
+			"bigsir.guiadditions.GuiAdditions"
 		],
-		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
-		],
-		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+		"afterClientStart": [
+			"bigsir.guiadditions.GuiAdditions"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+		"examplemod.mixins.json"
   ],
 
   "depends": {
 		"minecraft": "*",
-    "fabricloader": ">=0.15.5"
+    "fabricloader": ">=0.15.5",
+		"halplibe": ">=5.0.0"
   },
   "suggests": {
   }

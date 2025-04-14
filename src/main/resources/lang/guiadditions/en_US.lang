@@ -1,0 +1,16 @@
+guiadditions.options=Gui Additions
+guiadditions.category.visuals=Visuals
+options.guiadditions.showBackground=Show Background
+options.guiadditions.hotbarSelectorStyle=Hotbar Selector Style
+options.guiadditions.slotSelectorStyle=Slot Selector Style
+guiadditions.hotbar.default=Default
+guiadditions.hotbar.ornate=Ornate
+guiadditions.hotbar.outline=Outline
+guiadditions.hotbar.arrows=Arrows
+guiadditions.hotbar.fantasy=Fantasy
+guiadditions.hotbar.worm=Worm
+guiadditions.hotbar.lovely=Lovely
+guiadditions.hotbar.diamond_rush=Diamond Rush
+guiadditions.slot.default=Default
+guiadditions.slot.corner=Corners
+guiadditions.slot.thick=Thick
