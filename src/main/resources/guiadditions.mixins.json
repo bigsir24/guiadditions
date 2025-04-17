@@ -6,13 +6,13 @@
   "mixins": [
   ],
   "client": [
+    "GameSettingsMixin",
+    "I18nMixin",
     "ItemElementMixin",
     "ItemModelStandardMixin",
     "OptionRangeAccessor",
     "ScreenContainerAbstractMixin",
-    "ScreenInventoryMixin",
-    "GameSettingsMixin",
-    "I18nMixin"
+    "ScreenInventoryMixin"
   ],
   "injectors": {
     "defaultRequire": 1
