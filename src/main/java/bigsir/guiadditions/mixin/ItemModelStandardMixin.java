@@ -22,7 +22,7 @@ public abstract class ItemModelStandardMixin {
 	@Redirect(method = "renderItemOverlayIntoGUI", at = @At(value = "INVOKE", target = "Lorg/lwjgl/opengl/GL11;glDisable(I)V", ordinal = 1))
 	private void fix2(int target) {
 		GL11.glPushMatrix();
-		GL11.glTranslatef(0, 0, 99);
+		GL11.glTranslatef(0, 0, 35);
 	}
 
 	@Inject(method = "renderItemOverlayIntoGUI", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/Font;drawStringWithShadow(Ljava/lang/String;III)V", shift = At.Shift.AFTER))

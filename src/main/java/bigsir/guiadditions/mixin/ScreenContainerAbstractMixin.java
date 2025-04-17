@@ -31,9 +31,9 @@ public abstract class ScreenContainerAbstractMixin extends Screen {
 		if(GuiAdditions.selectorStyle.value == 0) return;
 
 		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 		GL11.glEnable(GL11.GL_DEPTH_TEST);
 		GuiAdditions.getHotbarTexture().bind();
-        //ResourceLoader.hotbarTextures.get(0).bind();
 		GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
 		Tessellator t = Tessellator.instance;
 
@@ -44,6 +44,8 @@ public abstract class ScreenContainerAbstractMixin extends Screen {
 
 		int x = centerX - 40;
 		int y = centerY + this.ySize - 33 + (hotbarOffset > 1 ? -80 + (hotbarOffset * 2 + 4) : 0) + 1;
+		int offset = 20;
+
 		t.startDrawingQuads();
 		if(GuiAdditions.showBackground.value) {
 			t.addVertexWithUV(x, y, this.zLevel + 0.01, 0, 0.5);
@@ -51,11 +53,13 @@ public abstract class ScreenContainerAbstractMixin extends Screen {
 			t.addVertexWithUV(x + 256, y + 32, this.zLevel + 0.01, 1, 1);
 			t.addVertexWithUV(x + 256, y, this.zLevel + 0.01, 1, 0.5);
 		}
+		t.draw();
 
-		t.addVertexWithUV(x, y, this.zLevel + 100, 0, 0);
-		t.addVertexWithUV(x, y + 32, this.zLevel + 100, 0, 0.5);
-		t.addVertexWithUV(x + 256, y + 32, this.zLevel + 100, 1, 0.5);
-		t.addVertexWithUV(x + 256, y, this.zLevel + 100, 1, 0);
+		t.startDrawingQuads();
+		t.addVertexWithUV(x, y, this.zLevel + offset, 0, 0);
+		t.addVertexWithUV(x, y + 32, this.zLevel + offset, 0, 0.5);
+		t.addVertexWithUV(x + 256, y + 32, this.zLevel + offset, 1, 0.5);
+		t.addVertexWithUV(x + 256, y, this.zLevel + offset, 1, 0);
 		t.draw();
 		GL11.glDisable(GL11.GL_DEPTH_TEST);
 	}
