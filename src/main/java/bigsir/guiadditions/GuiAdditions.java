@@ -13,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
 
-
 public class GuiAdditions implements ModInitializer, ClientStartEntrypoint {
     public static final String MOD_ID = "guiadditions";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -72,5 +71,33 @@ public class GuiAdditions implements ModInitializer, ClientStartEntrypoint {
 
 	public static String langKey(String string) {
 		return MOD_ID + "." + string;
+	}
+
+	public static int getPrecedence(String name) {
+		return Precedence.valueOf(name.substring(name.indexOf(".") + 1).replace(".", "_").toUpperCase()).precedence;
+	}
+
+	@SuppressWarnings("unused")
+	private enum Precedence {
+		HOTBAR_ARROWS,
+		HOTBAR_OUTLINE,
+		HOTBAR_ORNATE,
+		HOTBAR_DIAMOND_RUSH,
+		HOTBAR_FANTASY,
+		HOTBAR_LOVELY,
+		HOTBAR_WORM,
+		SLOT_CORNER,
+		SLOT_THICK;
+
+		private final int precedence;
+		private static int incr = 0;
+
+		private int getId() {
+			return ++incr;
+		}
+
+		Precedence() {
+			this.precedence = getId();
+		}
 	}
 }
