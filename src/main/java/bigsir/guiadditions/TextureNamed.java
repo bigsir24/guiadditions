@@ -9,6 +9,7 @@ public class TextureNamed extends TextureBuffered {
 	private final String key;
 	public TextureNamed(BufferedImage image, String key) {
 		super(image, false, false, false);
+		this.image = null;
 		this.key = key;
 	}
 
